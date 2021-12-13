@@ -1,0 +1,149 @@
+﻿@{
+    ViewData["Title"] = "Mượn/Trả";
+    Layout = "_Thuvien";
+}
+@section css{
+    <link href="~/css/muon.css" rel="stylesheet" />
+}
+<div class="content">
+    <div class="content-header">
+
+    </div>
+    <div class="content-body">
+        <h4>Danh mục Sách</h4>
+        <div class="grid-content">
+            <div class="toolbar">
+                <button id="btnAdd" style="background-color: #4dc7d8">
+                    <i class="fa fa-plus" aria-hidden="true"></i>Mượn sách
+                </button>
+            </div>
+            <div class="grid">
+                <table id="clickrowid" class="table table-striped table-bordered">
+                    <thead>
+                        <tr>
+                            <th style="width: 20px;" scope="col">Mã</th>
+                            <th scope="col">Tên sách</th>
+                            <th scope="col">Người mượn</th>
+                            <th style="width: 150px" scope="col">Số lượng</th>
+                            <th scope="col">Tiền cọc</th>
+                            <th style="width: 120px" scope="col">Ngày mượn</th>
+                            <th style="width: 100px" scope="col">Thao tác</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @*bảng data*@
+                    </tbody>
+                </table>
+                <div>
+                    danh sách đã trả
+                </div>
+                <table id="clickrowid1" class="table table-striped table-bordered">
+                    <thead>
+                        <tr>
+                            <th style="width: 20px;" scope="col">Mã</th>
+                            <th scope="col">Tên sách</th>
+                            <th scope="col">Người mượn</th>
+                            <th style="width: 150px" scope="col">Số lượng</th>
+                            <th scope="col">Tiền cọc</th>
+                            <th style="width: 120px" scope="col">Ngày mượn</th>
+                            <th style="width: 120px" scope="col">Ngày trả</th>
+                            <th style="width: 100px" scope="col">Thao tác</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @*bảng data*@
+                    </tbody>
+                </table>
+            </div>
+            <div class="paging">
+                a
+            </div>
+        </div>
+    </div>
+</div>
+<div class="dialog-modal">
+</div>
+<div class="dialog">
+    <div class="dialog-header">
+        <div class="dialog-title">Thêm mới sách</div>
+        <div id="btnCancel" class="close-button">&times;</div>
+    </div>
+    <!-- Modal body -->
+    <div class="dialog-body" id="showdiv">
+        <div class="form-group yes">
+            <div class="form-row">
+                <div class="col-6">
+                    <label for="mas">Mã mượn:</label>
+                    <input type="text" id="MaMuonTra" class="form-control" placeholder="Mã mượn" required>
+                </div>
+                <div class="col-6">
+                    <label for="pwd">Mã sách:</label>
+                    <input type="text" id="MaSach" class="form-control" placeholder="Mã sách" required>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="col-6">
+                    <label for="pwd">Số lượng</label>
+                    <input type="number" id="SoLuong" class="form-control" placeholder="Số lượng" required>
+                </div>
+                <div class="col-6">
+                    <label for="mas">Tiền cọc</label>
+                    <input type="number" id="TienCoc" class="form-control" placeholder="Tiền cọc dạng số" required>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="col-6">
+                    <label for="mas">Mã đọc giả</label>
+                    <input type="text" id="MaDocGia" class="form-control" placeholder="Mã đọc giả" required>
+                </div>
+                <div class="col-6 shows showdetail">
+                    <label for="mas">Tên sách</label>
+                    <input type="text" id="TenSach" class="form-control">
+                </div>
+            </div>
+            <div class="form-row shows showdetail">
+                <div class="col-6">
+                    <label for="mas">Tên đọc giả</label>
+                    <input type="text" id="TenDocGia" class="form-control">
+                </div>
+                <div class="col-6">
+                    <label for="mas">Tác giả</label>
+                    <input type="text" id="TacGia" class="form-control">
+                </div>
+            </div>
+            <div class="form-row shows showdetail">
+                <div class="col-6">
+                    <label for="mas">Sđt</label>
+                    <input type="text" id="Sdt" class="form-control">
+                </div>
+                <div class="col-6">
+                    <label for="mas">Nhà xuất bản</label>
+                    <input type="text" id="NhaXB" class="form-control">
+                </div>
+            </div>
+            <div class="form-row shows showdetail">
+                <div class="col-6">
+                    <label for="mas">Ngày mượn</label>
+                    <input type="datetime-local" id="NgayMuon" class="form-control">
+                </div>
+                <div class="col-6">
+                    <label for="mas">Năm xuất bản</label>
+                    <input type="text" id="NamXB" class="form-control">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal footer -->
+    <div class="dialog-footer">
+        <button id="btnld" class="btn btn-primary">Lần đầu</button>
+        <button id="btnsave" class="btn btn-primary">Lưu</button>
+        <button id="btnClose" class="btn btn-secondary">Đóng</button>
+    </div>
+</div>
+@section scripts{
+    <script src="~/js/jquery-3.6.0.min.js"></script>
+    <script src="~/js/muontra.js"></script>
+}
+
+

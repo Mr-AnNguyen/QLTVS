@@ -1,0 +1,168 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewData["Title"] = "Sach";
+    Layout = "_Thuvien";
+}
+
+<div class="content">
+    <div class="content-header">
+
+    </div>
+    <div class="content-body">
+        <h4>Danh mục Sách</h4>
+        <div class="grid-content">
+            <div class="toolbar">
+                <button id="btnAdd" style="background-color: #4dc7d8">
+                    <i class="fa fa-plus" aria-hidden="true"></i>Thêm
+                </button>
+            </div>
+            <div class="grid">
+                <table id="clickrowid" class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th style="width: 20px;" scope="col">Mã Sách</th>
+                            <th scope="col">Tên sách</th>
+                            <th scope="col">Tác giả</th>
+                            <th scope="col">Thể loại</th>
+                            <th scope="col">Tên NXB</th>
+                            <th style="width: 100px" scope="col">Năm XB</th>
+                            <th style="width: 50px" scope="col">SL</th>
+                            <th style="width: 50px" scope="col">Gia</th>
+                            <th style="width: 90px" scope="col">Thao tác</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @*<tr>
+                                <th scope="row">1</th>
+                                <td>Mark</td>
+                                <td>Otto</td>
+                                <td>mdo</td>
+                                <td>2000</td>
+                                <td>2</td>
+                                <td>
+                                    <button style="background-color: #00ff21">
+                                        <i class="fa fa-pencil-square-o" aria-hidden="true"></i>Sửa
+                                    </button>
+                                    <button style="background-color: #ff0000">
+                                        <i class="fa fa-trash-o" aria-hidden="true"></i>Xóa
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">2</th>
+                                <td>Jacob</td>
+                                <td>Thornton</td>
+                                <td>fat</td>
+                                <td>1998</td>
+                                <td>2</td>
+                                <td>
+                                    <button style="background-color: #00ff21">
+                                        <i class="fa fa-pencil-square-o" aria-hidden="true"></i>Sửa
+                                    </button>
+                                    <button style="background-color: #ff0000">
+                                        <i class="fa fa-trash-o" aria-hidden="true"></i>Xóa
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">3</th>
+                                <td>Larry</td>
+                                <td>the Bird</td>
+                                <td>twitter</td>
+                                <td>2007</td>
+                                <td>2</td>
+                                <td>
+                                    <button style="background-color: #00ff21">
+                                        <i class="fa fa-pencil-square-o" aria-hidden="true"></i>Sửa
+                                    </button>
+                                    <button style="background-color: #ff0000">
+                                        <i class="fa fa-trash-o" aria-hidden="true"></i>Xóa
+                                    </button>
+                                </td>
+                            </tr>*@
+                    </tbody>
+                </table>
+            </div>
+            <div class="paging">
+                a
+            </div>
+        </div>
+    </div>
+</div>
+<div class="dialog-modal">
+</div>
+<div class="dialog">
+        <div class="dialog-header">
+            <div class="dialog-title">Thêm mới sách</div>
+            <div id="btnCancel" class="close-button">&times;</div>
+        </div>
+        <!-- Modal body -->
+        <div class="dialog-body">
+            <div class="form-group">
+                <div class="form-row">
+                    <div class="col-5">
+                        <label for="mas">Mã Sách:</label>
+                        <input type="text" id="MaSach" class="form-control" placeholder="Mã sách" name="mas" required>
+                    </div>
+                    <div class="col-5">
+                        <label for="pwd">Mã Loại:</label>
+                        <select name="gt" id="MaLoai" class="form-control">
+                            @*<option value="Nam">Nam</option>
+                            <option value="Nữ">Nữ</option>*@
+                        </select>
+                        @*<input type="text" id="MaLoai" class="form-control" placeholder="Mã Loại" name="mal" required>*@
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="form-row">
+                    <div class="col-5">
+                        <label for="TenSach">Tên sách:</label>
+                        <input type="text" id="TenSach" class="form-control" placeholder="Tên sách" name="ts" required>
+                    </div>
+                    <div class="col-5">
+                        <label for="TacGia">Tác giả:</label>
+                        <input type="text" id="TacGia" class="form-control" placeholder="Tên tác giả" name="tg" required>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="form-row">
+                    <div class="col-5">
+                        <label for="NXB">Nhà xuất bản:</label>
+                        <input type="text" id="NhaXB" class="form-control" placeholder="Nhà xuất bản" name="nhaxb" required>
+                    </div>
+                    <div class="col-5">
+                        <label for="NamXB">Năm Xuất bản:</label>
+                        <input type="number" id="NamXB" class="form-control" placeholder="Năm xuất bản" name="namxb" required>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="form-row">
+                    <div class="col-5">
+                        <label for="SoLuong">Số lượng:</label>
+                        <input type="number" id="SoLuong" class="form-control" placeholder="Số lượng" name="sl" required>
+                    </div>
+                    <div class="col-5">
+                        <label for="Gia">Giá:</label>
+                        <input type="number" id="Gia" class="form-control" placeholder="Giá" name="gia" required>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal footer -->
+        <div class="dialog-footer">
+            <button id="btnsave" class="btn btn-primary">Save</button>
+            <button id="btnClose" class="btn btn-secondary">Close</button>
+        </div>
+</div>
+@section scripts{
+    <script src="~/js/jquery-3.6.0.min.js"></script>
+    @*<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>*@
+    <script src="~/js/sach.js"></script>
+}

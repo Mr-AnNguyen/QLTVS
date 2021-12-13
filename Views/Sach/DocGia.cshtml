@@ -1,0 +1,110 @@
+﻿@{
+    ViewData["Title"] = "Đọc giả";
+    Layout = "_Thuvien";
+}
+
+<div class="content">
+    <div class="content-header">
+
+    </div>
+    <div class="content-body">
+        <h4>Danh sách đọc giả</h4>
+        <div class="grid-content">
+            <div class="toolbar">
+                <button id="btnAdd" style="background-color: #4dc7d8">
+                    <i class="fa fa-plus" aria-hidden="true"></i>Thêm
+                </button>
+            </div>
+            <div class="grid">
+                <table id="clickrowid" class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th style="width: 20px;" scope="col">Mã</th>
+                            <th scope="col">Họ tên</th>
+                            <th scope="col">Địa chỉ</th>
+                            <th scope="col">Sđt</th>
+                            <th scope="col">CCCD</th>
+                            <th style="width: 100px" scope="col">Giới tính</th>
+                            <th style="width: 50px" scope="col">Ngày sinh</th>
+                            <th style="width: 90px" scope="col">Thao tác</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @*content table*@
+                    </tbody>
+                </table>
+            </div>
+            <div class="paging">
+                a
+            </div>
+        </div>
+    </div>
+</div>
+<div class="dialog-modal">
+</div>
+<div class="dialog">
+    <div class="dialog-header">
+        <div class="dialog-title">Thêm mới sách</div>
+        <div id="btnCancel" class="close-button">&times;</div>
+    </div>
+    <!-- Modal body -->
+    <div class="dialog-body">
+        <div class="form-group">
+            <div class="form-row">
+                <div class="col-5">
+                    <label for="mas">Mã đọc giả:</label>
+                    <input type="text" id="MaDocGia" class="form-control" placeholder="Mã đọc giả" name="madg" required>
+                </div>
+                <div class="col-5">
+                    <label for="pwd">Tên đọc giả:</label>
+                    <input type="text" id="TenDocGia" class="form-control" placeholder="Họ tên" name="ht" required>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="form-row">
+                <div class="col-5">
+                    <label for="TenSach">Địa chỉ:</label>
+                    <input type="text" id="DiaChi" class="form-control" placeholder="Địa chỉ hiện tại" name="dc" required>
+                </div>
+                <div class="col-5">
+                    <label for="TacGia">Sđt:</label>
+                    <input type="text" id="SDT" class="form-control" placeholder="Số điện thoại" name="sdt" required>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="form-row">
+                <div class="col-5">
+                    <label for="NXB">CCCD:</label>
+                    <input type="text" id="CCCD" class="form-control" placeholder="Số căn cước" name="cccd" required>
+                </div>
+                <div class="col-5">
+                    <label for="NamXB">Giới tính:</label>
+                    <select name="gt" id="GioiTinh" class="form-control">
+                        <option value="Nam">Nam</option>
+                        <option value="Nữ">Nữ</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="form-row">
+                <div class="col-5">
+                    <label for="SoLuong">Ngày sinh:</label>
+                    <input type="date" id="NgaySinh" class="form-control" placeholder="Ngày sinh" name="ns" required>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal footer -->
+    <div class="dialog-footer">
+        <button id="btnsave" class="btn btn-primary">Save</button>
+        <button id="btnClose" class="btn btn-secondary">Close</button>
+    </div>
+</div>
+@section scripts{
+    <script src="~/js/jquery-3.6.0.min.js"></script>
+    <script src="~/js/docgia.js"></script>
+}
